@@ -1,0 +1,72 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pdb
+*.log
+
+static/qr_codes/
+static/images/
+# Entorno virtual
+.env/
+venv/
+env/
+
+# Archivos de configuración del IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Archivos de bases de datos
+*.sqlite
+*.db
+
+# Archivos de compilación
+*.egg
+*.egg-info/
+dist/
+build/
+*.manifest
+*.spec
+
+# Archivos de caché de pip
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Archivos de caché de MySQL/PostgreSQL
+*.db
+*.sql
+*.sqlite3
+
+# Archivos de test temporales
+*.cover
+*.tox/
+*.nox/
+*.coverage
+*.hypothesis/
+.coverage.*
+nosetests.xml
+coverage.xml
+*.log
+
+# Archivos de configuración de Docker
+Dockerfile
+docker-compose.yml
+
+# Archivos de configuración de FastAPI
+*.db
+*.sqlite
+*.pyc
+
+# Archivos de pruebas
+test-results/
+__init__.py
+
+# Archivos sensibles
+.env
+.env.local
+.env.prod
+.env.test
+.secret
