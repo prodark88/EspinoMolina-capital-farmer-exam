@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String, Float, DateTime
+from sqlalchemy import Column, Integer, String, Float, DateTime , Text
 from datetime import datetime
 from app.core.database import Base
 
@@ -10,5 +10,6 @@ class Cotizacion(Base):
     nombre_cliente = Column(String)
     email = Column(String)
     tipo_servicio = Column(String) 
+    descripcion = Column(Text) 
     precio = Column(Float)
     fecha_creacion = Column(DateTime, default=datetime.utcnow)

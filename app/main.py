@@ -44,6 +44,7 @@ async def generar_cotizacion(data: CotizacionCreate, db: AsyncSession = Depends(
         nombre_cliente=data.nombre_cliente,
         email=data.email,
         tipo_servicio=data.tipo_servicio,
+        descripcion=data.descripcion,  # ← Aquí se agrega
         precio=PRECIOS_SERVICIOS[data.tipo_servicio],
         fecha_creacion=datetime.utcnow()
     )

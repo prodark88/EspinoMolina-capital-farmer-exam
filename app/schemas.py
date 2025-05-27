@@ -10,7 +10,8 @@ class TipoServicioEnum(str, Enum):
 class CotizacionCreate(BaseModel):
     nombre_cliente: str
     email: EmailStr
-    tipo_servicio: TipoServicioEnum  # Aquí usas el Enum
+    tipo_servicio: TipoServicioEnum
+    descripcion: str
 
 class CotizacionResponse(CotizacionCreate):
     numero_cotizacion: str
