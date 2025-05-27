@@ -6,8 +6,18 @@ from app.core.init_db import init_db
 from app.core.database import get_db
 from app.models import Cotizacion
 from app.schemas import CotizacionCreate, CotizacionResponse
-
+from fastapi.middleware.cors import CORSMiddleware
+from app.core.config import get_settings
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+    
+)
 
 PRECIOS_SERVICIOS = {
     "Constitución de empresa": 1500,
@@ -15,7 +25,7 @@ PRECIOS_SERVICIOS = {
     "Consultoría tributaria": 800
 }
 
-
+settings = get_settings()  
 
 #Rutas y operaciones CRUD
 @app.get("/")
