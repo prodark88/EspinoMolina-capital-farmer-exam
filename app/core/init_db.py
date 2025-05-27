@@ -1,5 +1,6 @@
 from app.core.database import Base, engine
 
+#Inicializa la base de datos creando las tablas necesarias
 async def init_db():
     try:
         print("Inicializando la base de datos...")

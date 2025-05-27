@@ -10,6 +10,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from app.core.config import get_settings
 app = FastAPI()
 
+#CONFIGURACION DE CORS 
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -19,15 +20,15 @@ app.add_middleware(
     
 )
 
+settings = get_settings()  
+
+#METODOS DE LA API
 PRECIOS_SERVICIOS = {
     "Constitución de empresa": 1500,
     "Defensa laboral": 2000,
     "Consultoría tributaria": 800
 }
 
-settings = get_settings()  
-
-#Rutas y operaciones CRUD
 @app.get("/")
 async def root():
     return {"message": "API funcionando correctamente"}
@@ -54,6 +55,8 @@ async def generar_cotizacion(data: CotizacionCreate, db: AsyncSession = Depends(
     await db.refresh(cotizacion)
 
     return cotizacion
+
+
 # Initialize database connection
 @app.on_event("startup")
 async def startup_event():

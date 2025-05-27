@@ -4,6 +4,7 @@ import os
 import json
 from typing import List
 
+#CONFIGURACION DE LA BASE DE DATOS A TRABAJAR
 class Settings(BaseSettings):
     DEBUG: bool = os.getenv("DEBUG")
     DATABASE_URL: str = os.getenv("DATABASE_URL")

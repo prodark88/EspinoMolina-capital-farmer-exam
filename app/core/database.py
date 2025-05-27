@@ -5,6 +5,7 @@ from app.core.config import get_settings
 
 settings = get_settings()
 
+# Configuración de la base de datos
 DATABASE_URL = settings.DATABASE_URL_PRODUCCION if not settings.DEBUG else settings.DATABASE_URL
 
 engine = create_async_engine(
